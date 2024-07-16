@@ -1,0 +1,49 @@
+﻿@model PruebaTecnica.Models.Orden
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Orden</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <input asp-for="ClienteId" class="form-control" />
+                <span asp-validation-for="ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrdenFecha" class="control-label"></label>
+                <input asp-for="OrdenFecha" class="form-control" />
+                <span asp-validation-for="OrdenFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadTotal" class="control-label"></label>
+                <input asp-for="CantidadTotal" class="form-control" />
+                <span asp-validation-for="CantidadTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Impuestos" class="control-label"></label>
+                <input asp-for="Impuestos" class="form-control" />
+                <span asp-validation-for="Impuestos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
